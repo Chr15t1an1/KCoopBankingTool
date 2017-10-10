@@ -18,6 +18,7 @@ file = working_dir+phppass_filename
 
 ######
 
+ 
 # Librarys
 classId_lib = {
     '3 Hour NY SAFE CE - 2017 Online': '6925',
