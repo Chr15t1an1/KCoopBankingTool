@@ -76,13 +76,13 @@ classId_lib = {
 
 
 
-    # '2 Hour UT SAFE Online CE 2017': 'N/A',
+
     '1 Hour WV SAFE CE 2017 Online': '6887',
     # added FL
     '1 Hour FL SAFE Online CE 2017 ': '7091',
     '1 Hour FL SAFE Online CE 2017': '7091',
     #Added Utah
-    '2 Hour UT SAFE Online CE 2017':'7305',
+    '2 Hour UT SAFE Online CE 2017': '7305',
 
 
 
@@ -146,43 +146,22 @@ Offering_lib = {
 
 
     '1 Hour RI DBR CE – 2017 Online': '293546',
-
     '1 Hour RI DBR CE - 2017 Online': '293546',
 
-    # '2 Hour UT SAFE Online CE 2017': 'N/A',
     '1 Hour WV SAFE CE 2017 Online': '293535',
     # added FL
     '1 Hour FL SAFE Online CE 2017 ': '302807',
     '1 Hour FL SAFE Online CE 2017': '302807',
 
     #Added Utah
-    '2 Hour UT SAFE Online CE 2017':'324792',
+    '2 Hour UT SAFE Online CE 2017': '324792',
 
 
 
 }
 
 
-
-
-# Import
-# import os
-# import pandas as pd
-# import numpy
-# import csv
-# import dateparser
-# import re
-# import shutil
-
-
-
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
-
-
-
-# #Functions
-
+#Functions
 def move(src, dest):
     shutil.move(src, dest)
 
@@ -251,8 +230,6 @@ def break_8Hour(file):
          outputSeven.writerow(sev)
          one = ['6924', '293550', student[2], student[0], student[1]]
          outputOne.writerow(one)
-
-
 
 #End_Functions
 
@@ -344,9 +321,12 @@ for x in files_in_dir:
     if "8 Hour" in x:
         break_8Hour(x)
 
-##!
-#os.chdir('/var/www/banking/kc-reporting/public/exports/')
-os.chdir('/var/www/KCoopBankingTool/public/exports/')
+#!
+
+
+
+os.chdir('/Users/c/Desktop/coop-to-github-document/www/banking/KCoopBankingTool/public/')
+#os.chdir('/var/www/KCoopBankingTool/public/')
 #Zip files
 output_filename ="output-"+phppass_filename
 dir_name = working_dir

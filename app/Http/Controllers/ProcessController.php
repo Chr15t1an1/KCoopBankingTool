@@ -10,71 +10,87 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class ProcessController extends Controller
 {
-    //
-
-    public static function index(){
-
+    // Returning Index page
+public static function index()
+    {
       return view('index');
-
-
-
     }
 
 
 
-
-
-    public static function docProcess()
-
-
-    {
-
-
-      $request = Request();//->all();
-
+    // Process Excel Doc
+public static function docProcess()
+{
+      $request = Request();
       $file = $request->file('fileToUpload');
-	  $extension = File::extension($_FILES["fileToUpload"]["name"]);
+	    $extension = File::extension($_FILES["fileToUpload"]["name"]);
 
+// Check File Type
  if ( $extension !== "xls") {
-
-
-   return '<h1>If its not an Excel file from the coop, we dont want it</h1><a href="/"><p>Go back where I came from</p></a>';
+   $message = 'Not the correct file type';
+   return view('error',compact('message'));
  	}
-
-
 
 #Get Current Time Stamp
 $date = Carbon::now();
-//$date = $date->getTimestamp();
+
 $dir = "uploads/";
 $dir.=$date;
 $dir = str_replace(' ', '-',$dir);
 $dir = str_replace(':', '.',$dir);
+
 #Create Directory to work from
-//mkdir($dir, 0777);
+
 $result = File::makeDirectory($dir, 0755,true);
 
 $dir .= "/";
 
+
 $filename = str_replace(" ","-",$_FILES["fileToUpload"]["name"]);
+
 $target_file = $dir.basename($filename);
 
- if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-	 return $dir.' '.basename($filename);
-
-	shell_exec('sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename));
-
-header("Location: /export");
-
-
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+// Save file
+ if (!move_uploaded_file($file, $target_file)) {
+    $message ="move_uploaded_file failed";
+    return view('error',compact('message'));
     }
 
 
 
-return $file;
+
+$path = app_path()."/Py/process.py";
+
+
+
+
+shell_exec('sudo python3 '.$path.' '.$dir.' '.basename($filename));
+
+// return 'sudo python3 '.$path.' '.$dir.' '.basename($filename);
+//
+// if () {
+//   return "True";
+// }else {
+//   return "false";
+// }
+
+
+
+//  return $path ;//'sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename);
+// shell_exec('sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename));
+//  return 'sudo python3 '.$path.' '.$dir.' '.basename($filename);
+
+
+
+
+return view('thankyou');
+// header("Location: /export");
+
+
+
+
+
+
 
     }
 
