@@ -18,7 +18,7 @@ file = working_dir+phppass_filename
 
 ######
 
- 
+
 # Librarys
 classId_lib = {
     '3 Hour NY SAFE CE - 2017 Online': '6925',
@@ -313,8 +313,9 @@ for x in files_to_check:
 for x in files_to_breakup:
     #print(x)
     outputfilename = str(x) + '_%s.csv'
+    #split(open(files_to_breakup[0], 'r'), delimiter=',', row_limit=99, output_name_template=outputfilename);
     split(open(files_to_breakup[0], 'r'), delimiter=',', row_limit=99, output_name_template=outputfilename);
-    os.remove(x)
+    #os.remove(x)
 
 #Break 8 hour class into 7+1
 for x in files_in_dir:
