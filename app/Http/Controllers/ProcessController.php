@@ -28,16 +28,16 @@ class ProcessController extends Controller
 
 
     {
-		
+
 
       $request = Request();//->all();
-	  
+
       $file = $request->file('fileToUpload');
 	  $extension = File::extension($_FILES["fileToUpload"]["name"]);
 
  if ( $extension !== "xls") {
 
- 	
+
    return '<h1>If its not an Excel file from the coop, we dont want it</h1><a href="/"><p>Go back where I came from</p></a>';
  	}
 
@@ -48,8 +48,8 @@ $date = Carbon::now();
 //$date = $date->getTimestamp();
 $dir = "uploads/";
 $dir.=$date;
-$dir = str_replace(' ', '-',$dir);  
-$dir = str_replace(':', '.',$dir); 
+$dir = str_replace(' ', '-',$dir);
+$dir = str_replace(':', '.',$dir);
 #Create Directory to work from
 //mkdir($dir, 0777);
 $result = File::makeDirectory($dir, 0777);
@@ -60,13 +60,13 @@ $filename = str_replace(" ","-",$_FILES["fileToUpload"]["name"]);
 $target_file = $dir.basename($filename);
 
  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-	 
+
 	 //return $dir.' '.basename($filename);
-    
-	shell_exec('sudo python3 /var/www/banking/kc-reporting/app/Py/process.py'.' '.$dir.' '.basename($filename));
-				
+
+	shell_exec('sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename));
+
 header("Location: /export");
-		
+
 
     } else {
         echo "Sorry, there was an error uploading your file.";

@@ -325,7 +325,7 @@ for x in files_in_dir:
 
 ##!
 #os.chdir('/var/www/banking/kc-reporting/public/exports/')
-os.chdir('/var/www/banking/kc-reporting/public/')
+os.chdir('/var/www/KCoopBankingTool/public/')
 #Zip files
 output_filename ="output-"+phppass_filename
 dir_name = working_dir

@@ -6,6 +6,12 @@
 This tool is to process coop export reports and create uploads ready for the NMLS website.
 
 
+
+## Set up
+1) Create uploads and exports folders
+2) Check path in contollers and Py file 
+
+
 ## Contributing
 
 Thank you for considering contributing to this peoject. Any contribution that makes the project better will be reviewed and added.
