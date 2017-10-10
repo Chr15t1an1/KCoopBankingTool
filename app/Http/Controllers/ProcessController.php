@@ -52,7 +52,7 @@ $dir = str_replace(' ', '-',$dir);
 $dir = str_replace(':', '.',$dir);
 #Create Directory to work from
 //mkdir($dir, 0777);
-$result = File::makeDirectory($dir, 0777);
+$result = File::makeDirectory($dir, 0755);
 
 $dir .= "/";
 

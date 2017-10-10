@@ -9,7 +9,8 @@ This tool is to process coop export reports and create uploads ready for the NML
 
 ## Set up
 1) Create uploads and exports folders
-2) Check path in contollers and Py file 
+2) Check path in contollers and Py file
+3) Create .env file 
 
 
 ## Contributing
