@@ -70,7 +70,12 @@ classId_lib = {
     '2 Hour NJ SAFE CE 2017 Online': '6885',
     '1 Hour NM SAFE CE 2017 Online': '6886',
     '3 Hour NY SAFE CE 2017 Online': '6925',
+
     '1 Hour RI DBR CE – 2017 Online': '6882',
+    '1 Hour RI DBR CE - 2017 Online': '6882',
+
+
+
     '2 Hour UT SAFE Online CE 2017': 'N/A',
     '1 Hour WV SAFE CE 2017 Online': '6887',
     # added FL
@@ -137,13 +142,18 @@ Offering_lib = {
     '2 Hour NJ SAFE CE 2017 Online': '293544',
     '1 Hour NM SAFE CE 2017 Online': '293538',
     '3 Hour NY SAFE CE 2017 Online': '293528',
+
+
+
     '1 Hour RI DBR CE – 2017 Online': '293546',
+
+    '1 Hour RI DBR CE - 2017 Online': '293546',
 
     '2 Hour UT SAFE Online CE 2017': 'N/A',
     '1 Hour WV SAFE CE 2017 Online': '293535',
     # added FL
     '1 Hour FL SAFE Online CE 2017 ': '302807',
-'1 Hour FL SAFE Online CE 2017': '302807',
+    '1 Hour FL SAFE Online CE 2017': '302807',
 
     #Added Utah
     '2 Hour UT SAFE Online CE 2017':'324792',
