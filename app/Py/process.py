@@ -317,6 +317,7 @@ for x in files_to_breakup:
     split(open(files_to_breakup[0], 'r'), delimiter=',', row_limit=99, output_name_template=outputfilename);
     #os.remove(x)
 
+
 #Break 8 hour class into 7+1
 for x in files_in_dir:
     # print(x)
