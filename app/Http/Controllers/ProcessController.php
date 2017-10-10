@@ -61,7 +61,7 @@ $target_file = $dir.basename($filename);
 
  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-	 //return $dir.' '.basename($filename);
+	 return $dir.' '.basename($filename);
 
 	shell_exec('sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename));
 
