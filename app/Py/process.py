@@ -76,6 +76,12 @@ classId_lib = {
     # added FL
     '1 Hour FL SAFE Online CE 2017 ': '7091',
     '1 Hour FL SAFE Online CE 2017': '7091',
+    #Added Utah 
+    '2 Hour UT-DRE SAFE Mortgage CE 2017':'7305',
+
+
+
+
 }
 Offering_lib = {
     '3 Hour NY SAFE CE - 2017 Online': '293528',
@@ -138,6 +144,11 @@ Offering_lib = {
     # added FL
     '1 Hour FL SAFE Online CE 2017 ': '302807',
 '1 Hour FL SAFE Online CE 2017': '302807',
+
+    #Added Utah
+    '2 Hour UT-DRE SAFE Mortgage CE 2017':'324792',
+
+
 
 }
 
