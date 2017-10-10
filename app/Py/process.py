@@ -328,8 +328,8 @@ for x in files_in_dir:
 
 
 
-os.chdir('/Users/c/Desktop/coop-to-github-document/www/banking/KCoopBankingTool/public/')
-#os.chdir('/var/www/KCoopBankingTool/public/')
+#os.chdir('/Users/c/Desktop/coop-to-github-document/www/banking/KCoopBankingTool/public/')
+os.chdir('/var/www/KCoopBankingTool/public/')
 #Zip files
 output_filename ="output-"+phppass_filename
 dir_name = working_dir
