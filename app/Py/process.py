@@ -222,7 +222,7 @@ def break_8Hour(file):
     outputSeven = csv.writer(sevenhour)
     outputOne = csv.writer(onehour)
 
-    headers = ['Course_Num','Offering_Num','NMLS_ID','Last_Name','Completion_Date']
+    headers = ['Course_Num','Offering_Num','NMLS_ID','Last_Name','Completion_Date','Inst']
     outputSeven.writerow(headers)
     outputOne.writerow(headers)
     for student in classroom:
