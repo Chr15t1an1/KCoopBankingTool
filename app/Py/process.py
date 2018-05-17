@@ -21,6 +21,7 @@ file = working_dir+phppass_filename
 
 # Librarys
 classId_lib = {
+    '2 Hour NJ SAFE CE 2018': '7831',
     '1 Hour SC SAFE CE 2018': '7808',
     '1 Hour DC SAFE CE 2018': '7747',
     '8 Hour SAFE Comprehensive Live 2018': '7603',
@@ -110,6 +111,7 @@ classId_lib = {
 
 }
 Offering_lib = {
+    '2 Hour NJ SAFE CE 2018': '377891',
     '1 Hour SC SAFE CE 2018': '377801',
     '1 Hour DC SAFE CE 2018': '372140',
     '1 Hour SC SAFE CE 2018': '377802',
