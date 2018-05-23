@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-		 Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
+		    Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -177,7 +177,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-		
+
+
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     ],
 
@@ -227,7 +230,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-		'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
+		    'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
 
     ],
 

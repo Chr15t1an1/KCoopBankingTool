@@ -59,52 +59,15 @@ $target_file = $dir.basename($filename);
 
 
 
-
-$path = app_path()."/Py/process.py";
-
-
-
-
-shell_exec('sudo python3 '.$path.' '.$dir.' '.basename($filename));
-
-// return 'sudo python3 '.$path.' '.$dir.' '.basename($filename);
-//
-// if () {
-//   return "True";
-// }else {
-//   return "false";
-// }
-
-
-
-//  return $path ;//'sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename);
-// shell_exec('sudo python3 /var/www/KCoopBankingTool/app/Py/process.py'.' '.$dir.' '.basename($filename));
-//  return 'sudo python3 '.$path.' '.$dir.' '.basename($filename);
-
-
-
+// ***************INSTERT PROCESS HERE
 
 return view('thankyou');
-// header("Location: /export");
-
-
-
-
-
 
 
     }
 
-    public static function exports(){
-
+public static function exports(){
       return view('thankyou');
-
-
-
     }
-
-
-
-
 
 }

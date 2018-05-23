@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +23,19 @@ Route::get('/sigmaker', 'IntController@sigMaker');
 Route::post('/process', 'ProcessController@docProcess');
 
 
+Route::get('excel-test', function () {
+    // http://localhost/assets/panel/excel/test123.xls
+    // /public/assets/panel/excel/test123.xls
+    $address = 'testinput/banking.xls';
+    Excel::load($address, function($reader) {
+        $results = $reader->get();
 
+        foreach ($results as $value) {
+          // print(gettype($value[0]));
+          $array =  (array) $value[0];
+          print_r($array);
+        }
 
+        // dd($results);
+    });
+});
