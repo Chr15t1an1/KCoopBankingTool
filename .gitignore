@@ -1,5 +1,5 @@
 /public/uploads
-/public/exports
+/public/exports/*.zip
 /node_modules
 /public/hot
 /public/storage
