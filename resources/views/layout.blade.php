@@ -1,4 +1,5 @@
 
+
 <?php
 
 if (!isset($message)) {
@@ -42,8 +43,8 @@ if (!isset($message)) {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="/">Upload Form </a></li>
-        <li class="active" ><a href="/export">Exports <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/">Upload Form </a></li>
+        <li  ><a href="/export">Exports <span class="sr-only">(current)</span></a></li>
         <li ><a href="/sigmaker">Email Signature Maker</a></li>
       </ul>
     </div>
@@ -51,86 +52,14 @@ if (!isset($message)) {
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div class="row">
-  <div class="container">
-    <h1>Exports Created</h1>
-    <div class="alert alert-warning"> <strong>Error!</strong> Please contact christian@knowledgecoop.com. <br/> <p>
 
-{{ $message }}
-
-    </p> </div>
-    <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
-      <thead>
-        <tr>
-          <th> Exports </th>
-          <th> Times </th>
-        </tr>
-      </thead>
-      <tbody>
-<?php
+ @yield('content')
 
 
-$ar = array();
-
-
-
-if ($handle = opendir('exports/')) {
-
-    while (false !== ($entry = readdir($handle))) {
-
-        if ($entry != "." && $entry != "..") {
-
-			$a = filemtime ('exports/'.$entry);
-			$date = date ("U", $a); // All nums
-
-			$pretty_date = date("F j, Y, g:i a", $a);
-
-
-			/*echo"<tr>
-			<td>
-			<a href ='/exports/$entry'>$entry</a>
-			</td>";
-			$a = filemtime ('exports/'.$entry);
-			echo "<td>".date ("Ymd", $a)."<td>
-			</tr>";
-
-			*/
-			$ar[$date] = array('link'=>"<a href ='/exports/$entry'>$entry</a>",'display_date' => $pretty_date);
-
-        }
-    }
-
-
-	krsort($ar);
-
-	foreach($ar as $a){
-
-		echo "<tr><td>";
-		echo $a['link'];
-		echo "</td>";
-		echo "<td>";
-		echo $a['display_date'];
-		echo "</td></tr>";
-
-
-		}
-
-
-
-
-    closedir($handle);
-}
-
-?>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
-</html>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <!-- Include all compiled plugins (below), or include individual files as needed -->
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </body>
+ </html>

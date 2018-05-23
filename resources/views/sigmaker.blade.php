@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="https://www.knowledgecoop.com/"><img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/1311/0223/t/7/assets/logo.png?8586966125495259491"></a>
+        <a class="navbar-brand" href="https://www.knowledgecoop.com/"><img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/1311/0223/t/12/assets/logo.png?17657271550225039941"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +83,7 @@
         </tr>
       </tbody>
     </table>
-  
+
   <br/>
   <br/>
 <p style="
@@ -97,8 +97,8 @@
 <p style="
     font-size: 8px;
 ">FEEDBACK: If you’d like to share feedback with us or have an issue that you need assistance with please email us at feedback@knowledgecoop.com and we’ll make sure to follow up with you. We value our clients and always appreciate hearing from you.</p>
-  
-  
+
+
   </div>
 </div>
 </div>

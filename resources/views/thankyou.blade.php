@@ -23,7 +23,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="https://www.knowledgecoop.com/"><img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/1311/0223/t/7/assets/logo.png?8586966125495259491"></a> </div>
+      <a class="navbar-brand" href="https://www.knowledgecoop.com/"><img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/1311/0223/t/12/assets/logo.png?17657271550225039941"></a> </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,7 +49,7 @@
         </tr>
       </thead>
       <tbody>
-<?php 
+<?php
 
 
 $ar = array();
@@ -61,13 +61,13 @@ if ($handle = opendir('exports/')) {
     while (false !== ($entry = readdir($handle))) {
 
         if ($entry != "." && $entry != "..") {
-			
+
 			$a = filemtime ('exports/'.$entry);
 			$date = date ("U", $a); // All nums
-			
+
 			$pretty_date = date("F j, Y, g:i a", $a);
-			
-			
+
+
 			/*echo"<tr>
 			<td>
 			<a href ='/exports/$entry'>$entry</a>
@@ -75,30 +75,30 @@ if ($handle = opendir('exports/')) {
 			$a = filemtime ('exports/'.$entry);
 			echo "<td>".date ("Ymd", $a)."<td>
 			</tr>";
-			
+
 			*/
 			$ar[$date] = array('link'=>"<a href ='/exports/$entry'>$entry</a>",'display_date' => $pretty_date);
-				
+
         }
     }
-	
-	
+
+
 	krsort($ar);
-	
+
 	foreach($ar as $a){
-		
+
 		echo "<tr><td>";
 		echo $a['link'];
 		echo "</td>";
 		echo "<td>";
 		echo $a['display_date'];
 		echo "</td></tr>";
-		
-		
+
+
 		}
-	
-	
-	
+
+
+
 
     closedir($handle);
 }
