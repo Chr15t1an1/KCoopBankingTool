@@ -29,13 +29,20 @@ Route::get('excel-test', function () {
     $address = 'testinput/banking.xls';
     Excel::load($address, function($reader) {
         $results = $reader->get();
+// $results->first_name;
+        // foreach ($results as $value) {
+        //   // print(gettype($value[0]));
+        //   $array =  (array) $value[0];
+        //   print_r($array);
+        // }
 
-        foreach ($results as $value) {
-          // print(gettype($value[0]));
-          $array =  (array) $value[0];
-          print_r($array);
-        }
+        //
+        // foreach ($results as $value) {
+        //   // print(gettype($value[0]));
+        //   // $array =  (array) $value[0];
+        //   print($value->first());
+        // }
 
-        // dd($results);
+        dd($results);
     });
 });
