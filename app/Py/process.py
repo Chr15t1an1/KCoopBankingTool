@@ -98,7 +98,7 @@ def break_8Hour(file):
 
 #Pull Data From File
 xl = pd.ExcelFile(file)
-sheet1 = xl.parse(0,skiprows=0)
+sheet1 = xl.parse(0,skiprows=2)
 lastname = sheet1['Last Name']
 CourseName = sheet1['Course Name']
 compleated_Date = sheet1['Completed On']
