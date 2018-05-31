@@ -1,3 +1,8 @@
+import courselibs
+Offering_lib = courselibs.Offering_lib
+classId_lib = courselibs.classId_lib
+
+
 import sys
 import os
 import pandas as pd
@@ -7,7 +12,7 @@ import dateparser
 import re
 import shutil
 import sys
-import pprint
+# import pprint
 
 
 working_dir = str(sys.argv[1])
@@ -17,197 +22,6 @@ file = working_dir+phppass_filename
 #Librarys
 
 ######
-
-
-# Librarys
-classId_lib = {
-    '2 Hour NJ SAFE CE 2018': '7831',
-    '1 Hour SC SAFE CE 2018': '7808',
-    '1 Hour DC SAFE CE 2018': '7747',
-    '8 Hour SAFE Comprehensive Live 2018': '7603',
-    '1 Hour SC SAFE CE 2018': '7807',
-    '3 Hour NY SAFE CE 2018': '7810',
-    '1 Hour SAFE Elective CE 2018': '7771',
-    '7 Hour SAFE Core CE 2018': '7756',
-    '1 Hour ID SAFE CE 2018': '7751',
-    '2 Hour OR SAFE CE - 2018 Online': '7755',
-    '1 Hour WA SAFE CE 2018': '7757',
-    '1 Hour CO SAFE CE 2018': '7758',
-    '2 Hour UT-DRE SAFE CE 2018': '7759',
-    '2 Hour OR SAFE CE - Live': '7761'
-    '1 Hour CA-DBO SAFE CE 2018': '7766',
-    '1 Hour HI SAFE CE 2018': '7770',
-    '1 Hour NM SAFE CE 2018': '7772',
-    '1 Hour AZ SAFE CE 2018': '7773',
-    '1 Hour KY SAFE CE 2018': '7775',
-    '1 Hour RI SAFE CE 2018': '7776',
-    '1 Hour MO SAFE CE 2018': '7777',
-    '1 Hour FL SAFE CE 2018': '7779',
-    '1 Hour MD SAFE CE 2018': '7784',
-    '1 Hour PA SAFE CE 2018': '7794',
-    '1 Hour NC SAFE CE 2018': '7795',
-    '1 Hour MA SAFE CE 2018': '7796',
-    '1 Hour CT SAFE CE 2018': '7797',
-    '1 Hour GA SAFE CE 2018': '7750',
-    '1 Hour WA SAFE CE 2018 - LIVE': '7798',
-    '1 Hour MO SAFE CE - 2017 Online': '6913',
-    '3 Hour NV SAFE CE - 2017 Online': '6912',
-    '1 Hour KY SAFE CE - 2017 Online': '6901',
-    '2 Hour OR SAFE CE - 2017 Online': '6900',
-    '1 Hour WV SAFE CE - 2017 Online': '6887',
-    '1 Hour NM SAFE CE - 2017 Online': '6886',
-    '2 Hour NJ SAFE CE - 2017 Online': '6885',
-    '1 Hour MD SAFE CE - 2017 Online': '6884',
-    '1 Hour MA SAFE CE - 2017 Online': '6883',
-    '1 Hour RI SAFE CE - 2017 Online': '6882',
-    '1 Hour PA SAFE CE - 2017 Online': '6863',
-    '1 Hour NC SAFE CE - 2017 Online': '6862',
-    '1 Hour GA SAFE CE - 2017 Online': '6861',
-    '1 Hour DC SAFE CE - 2017 Online': '6860',
-    '1 Hour CT SAFE CE - 2017 Online': '6852',
-    '1 Hour CO SAFE CE - 2017 Online': '6850',
-    '1 Hour HI SAFE CE - 2017 Online': '6849',
-    '1 Hour AZ SAFE CE - 2017 Online': '6848',
-    '1 Hour CA-DBO SAFE CE - 2017 Online': '6847',
-    '1 Hour WA SAFE CE - 2017 Online': '6846',
-
-    '1 Hour WA SAFE CE 2017 Online': '6846',  # Lookup
-    '2 Hour OR SAFE CE 2017 Online': '6900',
-    '1 Hour CA-DBO SAFE CE 2017 Online': '6847',
-    '1 Hour AZ SAFE CE 2017 Online': '6848',
-    '1 Hour CO SAFE CE 2017 Online': '6850',
-    '1 Hour MD SAFE CE 2017 Online': '6884',
-    '1 Hour NC SAFE CE 2017 Online': '6862',
-    '1 Hour PA SAFE CE 2017 Online': '6863',
-    '2017 7 Hour SAFE CE Core Online': '6915',
-    '2017 8 Hour SAFE CE (7 Hour Core + 1 Hour Elective) Online': '6759',
-    '3 Hour NV SAFE CE 2017 Online': '6912',
-    '1 Hour SAFE CE Elective 2017 Online': '6924',
-    '1 Hour CT SAFE CE 2017 Online': '6852',
-    '1 Hour HI SAFE CE 2017 Online': '6849',
-    '1 Hour ID SAFE CE 2017 Online': '6914',
-    '1 Hour KY SAFE CE 2017 Online': '6901',
-    '1 Hour MA SAFE CE 2017 Online': '6883',
-    '1 Hour MO SAFE CE 2017 Online': '6913',
-    '2 Hour NJ SAFE CE 2017 Online': '6885',
-    '1 Hour NM SAFE CE 2017 Online': '6886',
-    '3 Hour NY SAFE CE 2017 Online': '6925',
-
-    '1 Hour RI DBR CE – 2017 Online': '6882',
-    '1 Hour RI DBR CE - 2017 Online': '6882',
-
-
-
-
-    '1 Hour WV SAFE CE 2017 Online': '6887',
-    # added FL
-    '1 Hour FL SAFE Online CE 2017 ': '7091',
-    '1 Hour FL SAFE Online CE 2017': '7091',
-    #Added Utah
-    '2 Hour UT SAFE Online CE 2017': '7305',
-
-
-
-
-}
-Offering_lib = {
-    '2 Hour NJ SAFE CE 2018': '377891',
-    '1 Hour SC SAFE CE 2018': '377801',
-    '1 Hour DC SAFE CE 2018': '372140',
-    '1 Hour SC SAFE CE 2018': '377802',
-    '3 Hour NY SAFE CE 2018': '377800',
-    '1 Hour SAFE Elective CE 2018': '372151',
-    '7 Hour SAFE Core CE 2018': '372144',
-    '1 Hour ID SAFE CE 2018': '372142',
-    '2 Hour OR SAFE CE - 2018 Online': '373001',
-    '1 Hour WA SAFE CE 2018': '372145',
-    '1 Hour CO SAFE CE 2018': '372146',
-    '2 Hour UT-DRE SAFE CE 2018': '372147',
-    '1 Hour CA-DBO SAFE CE 2018': '372149',
-    '1 Hour HI SAFE CE 2018': '372150',
-    '1 Hour NM SAFE CE 2018': '372152',
-    '1 Hour AZ SAFE CE 2018': '372153',
-    '1 Hour KY SAFE CE 2018': '372154',
-    '1 Hour RI SAFE CE 2018': '372155',
-    '1 Hour MO SAFE CE 2018': '372156',
-    '1 Hour FL SAFE CE 2018': '372157',
-    '1 Hour MD SAFE CE 2018': '373232',
-    '1 Hour PA SAFE CE 2018': '375672',
-    '1 Hour NC SAFE CE 2018': '373674',
-    '1 Hour MA SAFE CE 2018': '373675',
-    '1 Hour CT SAFE CE 2018': '375674',
-    '1 Hour GA SAFE CE 2018': '372141',
-    '3 Hour NY SAFE CE - 2017 Online': '293528',
-    '1 Hour SAFE CE Elective - 2017 Online': '293550',
-    '7 Hour SAFE Core CE 2017 - Online': '293551',
-    '1 Hour ID SAFE CE - 2017 Online': '293532',
-    '1 Hour MO SAFE CE - 2017 Online': '293533',
-    '3 Hour NV SAFE CE - 2017 Online': '293552',
-    '1 Hour KY SAFE CE - 2017 Online': '293534',
-    '2 Hour OR SAFE CE - 2017 Online': '293553',
-    '1 Hour WV SAFE CE - 2017 Online': '293535',
-    '1 Hour NM SAFE CE - 2017 Online': '293538',
-    '2 Hour NJ SAFE CE - 2017 Online': '293544',
-    '1 Hour MD SAFE CE - 2017 Online': '293554',
-    '1 Hour MA SAFE CE - 2017 Online': '293545',
-    '1 Hour RI SAFE CE - 2017 Online': '293546',
-    '1 Hour PA SAFE CE - 2017 Online': '293556',
-    '1 Hour NC SAFE CE - 2017 Online': '293557',
-    '1 Hour GA SAFE CE - 2017 Online': '293558',
-    '1 Hour DC SAFE CE - 2017 Online': '293547',
-    '1 Hour CT SAFE CE - 2017 Online': '293559',
-    '1 Hour CO SAFE CE - 2017 Online': '293560',
-    '1 Hour HI SAFE CE - 2017 Online': '293561',
-    '1 Hour AZ SAFE CE - 2017 Online': '293564',
-    '1 Hour CA-DBO SAFE CE - 2017 Online': '293567',
-    '1 Hour WA SAFE CE - 2017 Online': '293581',
-    '8 Hour SAFE Comprehensive Live 2017': 'N/A',
-    '1 Hour KY SAFE CE - 2016 Online': '293534',
-    '1 Hour CO SAFE CE 2016 Online': '293560',
-    '3 Hour NV SAFE CE 2016 Online': '293552',
-
-    '1 Hour WA SAFE CE 2017 Online': '293581',  # Lookup
-    '2 Hour OR SAFE CE 2017 Online': '293553',
-    '1 Hour CA-DBO SAFE CE 2017 Online': '293567',
-    '1 Hour AZ SAFE CE 2017 Online': '293564',
-    '1 Hour CO SAFE CE 2017 Online': '293560',
-    '1 Hour GA SAFE CE 2017 Online': '293558',
-    '1 Hour MD SAFE CE 2017 Online': '293554',
-    '1 Hour NC SAFE CE 2017 Online': '293557',
-    '1 Hour PA SAFE CE 2017 Online': '293556',
-    '2017 7 Hour SAFE CE Core Online': '293551',
-    '2017 8 Hour SAFE CE (7 Hour Core + 1 Hour Elective) Online': 'N/A',
-    '3 Hour NV SAFE CE 2017 Online': '293552',
-
-    '1 Hour SAFE CE Elective 2017 Online': '293550',
-    '1 Hour CT SAFE CE 2017 Online': '293559',
-    '1 Hour DC SAFE CE 2017 Online': '293547',
-    '1 Hour HI SAFE CE 2017 Online': '293561',
-    '1 Hour ID SAFE CE 2017 Online': '293532',
-    '1 Hour KY SAFE CE 2017 Online': '293534',
-    '1 Hour MA SAFE CE 2017 Online': '293545',
-    '1 Hour MO SAFE CE 2017 Online': '293533',
-    '2 Hour NJ SAFE CE 2017 Online': '293544',
-    '1 Hour NM SAFE CE 2017 Online': '293538',
-    '3 Hour NY SAFE CE 2017 Online': '293528',
-
-
-
-    '1 Hour RI DBR CE – 2017 Online': '293546',
-    '1 Hour RI DBR CE - 2017 Online': '293546',
-
-    '1 Hour WV SAFE CE 2017 Online': '293535',
-    # added FL
-    '1 Hour FL SAFE Online CE 2017 ': '302807',
-    '1 Hour FL SAFE Online CE 2017': '302807',
-
-    #Added Utah
-    '2 Hour UT SAFE Online CE 2017': '324792',
-
-
-
-}
-
 
 #Functions
 def move(src, dest):
@@ -284,7 +98,7 @@ def break_8Hour(file):
 
 #Pull Data From File
 xl = pd.ExcelFile(file)
-sheet1 = xl.parse(0,skiprows=2)
+sheet1 = xl.parse(0,skiprows=0)
 lastname = sheet1['Last Name']
 CourseName = sheet1['Course Name']
 compleated_Date = sheet1['Completed On']
@@ -375,7 +189,7 @@ for x in files_in_dir:
 
 
 
-#os.chdir('/Users/c/Desktop/coop-to-github-document/www/banking/KCoopBankingTool/public/')
+# os.chdir('/Users/c/Desktop/KCoopBankingTool/public/')
 os.chdir('/var/www/KCoopBankingTool/public/')
 #Zip files
 output_filename ="output-"+phppass_filename
